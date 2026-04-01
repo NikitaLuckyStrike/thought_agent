@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thought Agent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <div class="app-container">
+        <header>
+            <h1>Thought Agent 🌿</h1>
+            <p>Ваш личный эмпатичный ИИ-психолог</p>
+        </header>
+        
+        <main id="chat-container">
+            <div class="welcome-message">
+                Поделитесь своими мыслями. Я здесь, чтобы выслушать, понять и помочь.
+            </div>
+        </main>
+        
+        <div class="input-area">
+            <textarea id="thought-input" placeholder="О чем вы сейчас переживаете или думаете?..." rows="3"></textarea>
+            <button id="submit-btn" onclick="analyzeThought()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+        </div>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>
