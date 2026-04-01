@@ -1,12 +1,15 @@
-from pydantic import BaseModel
-from datetime import datetime
+from pydantic import BaseModel, Field
 
 class EntryCreate(BaseModel):
-    original_text: str
+    original_text: str = Field(..., min_length=1, max_length=10000)
 
 class EntryResponse(BaseModel):
-    id: int
     original_text: str
-    created_at: datetime
 
-    model_config = {"from_attributes": True}
+class EntryAnalysisResponse(BaseModel):
+    original_text: str
+    summary: str
+    tags: list[str]
+    emotion: str
+    intent: str
+    insight: str
