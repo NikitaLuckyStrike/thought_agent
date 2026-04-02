@@ -72,3 +72,6 @@ def analyze_entry(db: Session, payload: EntryCreate) -> EntryAnalysisResponse:
     db.refresh(db_entry)
     
     return analysis
+
+def get_all_entries(db: Session, limit: int = 50) -> list[Entry]:
+    return db.query(Entry).order_by(Entry.created_at.desc()).limit(limit).all()
